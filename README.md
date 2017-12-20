@@ -60,19 +60,32 @@ const log = createLogger(options, data);
 > In the API descriptions below, we will use debug(), but every level has its own method, as described above in
 > "Levels".
 
-**log.debug(string message)**
+**log.debug(string message, [any ...args])**
 
-Logs a simple message.
-
-**log.debug(string message, any ...args)**
-
-Logs a simple message, and applies the given arguments to the message string using
+Logs a simple message, and applies any extra arguments to the message string using
 [util.format](https://nodejs.org/docs/latest/api/util.html#util_util_format_format_args).
 
 Example:
 
 ```js
 log.debug('User "%s" logged in', username);
+```
+
+**log.debug(Object|Array data, string message, [any ...args])**
+
+Logs a simple message, with data attached. The data may be an object or an array with any amount depth you may wish
+to apply. Certain property names will automatically apply specialized serializers that make the object more readable
+or parseable.
+
+The built-in property serializers are:
+
+- `req`: HTTP IncomingMessage
+- `error`: an Error object with a stack and optional code are assumed
+
+Example:
+
+```js
+log.debug({ error }, 'User failed to "%s" log in', username);
 ```
 
 **log.child([Object data]) -> Logger**
