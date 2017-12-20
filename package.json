@@ -1,0 +1,37 @@
+{
+  "name": "cagey-logger",
+  "version": "0.0.1",
+  "description": "Logger for the Cagey game framework",
+  "main": "lib/index.js",
+  "scripts": {
+    "precommit": "npm test",
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cagey-framework/cagey-logger.git"
+  },
+  "keywords": [
+    "game",
+    "framework",
+    "logger"
+  ],
+  "files": [
+    "lib",
+    "LICENSE"
+  ],
+  "author": "Ron Korving <rkorving@wizcorp.jp>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cagey-framework/cagey-logger/issues"
+  },
+  "homepage": "https://github.com/cagey-framework/cagey-logger#readme",
+  "dependencies": {
+    "chalk": "2.3.0",
+    "require-dir": "0.3.2"
+  },
+  "devDependencies": {
+    "eslint": "4.13.1",
+    "husky": "0.14.3"
+  }
+}
