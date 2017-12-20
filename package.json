@@ -1,6 +1,6 @@
 {
   "name": "cagey-logger",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Logger for the Cagey game framework",
   "main": "lib/index.js",
   "scripts": {
