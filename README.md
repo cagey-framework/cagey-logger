@@ -48,7 +48,7 @@ const createLogger = require('cagey-logger').create;
 
 const options = {
     name: 'myapp',   // the name of your application
-    format: 'json',  // 'json' or 'human'
+    format: 'json',  // 'json' or 'human', defaults to 'human' when run inside a text terminal, 'json' otherwise
     level: 'debug'   // will only output this level and more severe levels
 };
 
