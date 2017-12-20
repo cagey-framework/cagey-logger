@@ -24,7 +24,7 @@ npm install cagey-logger --save
 The severity levels are directly modeled after [Syslog](https://en.wikipedia.org/wiki/Syslog#Severity_level):
 
 nr | method name     | description
----+-----------------+------------
+-- | --------------- | -----------
 0  | log.emergency() | System is unusable.
 1  | log.alert()     | Action must be taken immediately. A condition that should be corrected immediately, such as a corrupted system database.
 2  | log.critical()  | Critical conditions, such as hard device errors.
