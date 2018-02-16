@@ -31,7 +31,7 @@
     "require-dir": "1.0.0"
   },
   "devDependencies": {
-    "eslint": "4.17.0",
+    "eslint": "4.18.0",
     "husky": "0.14.3"
   }
 }
