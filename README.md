@@ -11,7 +11,7 @@ This is *the* standard logger for Cagey applications and plugins. It is heavily 
 - Meta data is not mixed with the rest of the data being logged, but has a dedicated `data` property.
 
 
-## Getting started
+## Installation
 
 This installs cagey-logger into your project:
 
@@ -41,15 +41,20 @@ words: from notices through emergencies.
 
 **factory**
 
-You can create a logger by calling the `create` factory function on the cagey-logger module:
+You can create a logger by calling the `create` factory function on the cagey-logger module. All options mentioned below
+are optional.
 
 ```js
 const createLogger = require('cagey-logger').create;
 
 const options = {
-    name: 'myapp',   // the name of your application
-    format: 'json',  // 'json' or 'human', defaults to 'human' when run inside a text terminal, 'json' otherwise
-    level: 'debug'   // will only output this level and more severe levels
+    format: 'json',      // 'json' or 'human'; default: 'human' when run inside a text terminal, 'json' otherwise
+    level: 'debug',      // only output this level and more severe levels
+    name: 'myapp',       // the name of your application, always logged when set
+    hostname: 'my-host', // machine's name, always logged; default: require('os').hostname()
+    stream: myStream,    // output stream; default: process.stderr
+    outputFormats,       // custom output formats; default: { human: HumanFormat, json: JsonFormat }
+    serializers          // custom data property serializers; default: { error: ErrorSerializer, req: HttpRequestSerializer }
 };
 
 const data = {};     // properties you want all log messages to output
